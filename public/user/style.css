@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #0e2238;
+  --secondary-color: #3b7ddd;
+  --text-color: #495057;
+  --bg-light: #fafbfe;
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-light);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Layout */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  min-height: 100vh;
+  padding: 20px;
+  transition: all var(--transition-speed) ease-in-out;
+  background-color: var(--bg-light);
+}
+
+/* Sidebar */
+#sidebar {
+  width: 70px;
+  min-width: 70px;
+  z-index: 1000;
+  transition: all var(--transition-speed) ease-in-out;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar.expand {
+  width: 260px;
+  min-width: 260px;
+}
+
+/* Sidebar Logo */
+.toggle-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  padding: 1rem 1.5rem;
+  transition: transform var(--transition-speed);
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.toggle-btn i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.sidebar-logo {
+  margin: auto 0;
+  padding: 1rem;
+}
+
+.sidebar-logo a {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: opacity var(--transition-speed);
+}
+
+.sidebar-logo a:hover {
+  opacity: 1;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  padding: 2rem 0;
+  flex: 1 1 auto;
+}
+
+.sidebar-link {
+  padding: 0.75rem 1.625rem;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border-left: 3px solid transparent;
+  transition: all var(--transition-speed);
+}
+
+.sidebar-link i {
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.sidebar-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--secondary-color);
+  transform: translateX(5px);
+}
+
+/* Logout link specific styling */
+.sidebar-link.text-danger {
+  color: #ff4444 !important;
+}
+
+.sidebar-link.text-danger:hover {
+  color: #fff !important;
+  background-color: rgba(255, 68, 68, 0.2);
+  border-left: 3px solid #ff4444;
+}
+
+/* Hide elements when sidebar is collapsed */
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+  display: none;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Images */
+.img-thumbnail {
+  border: 2px solid #eee;
+  padding: 5px;
+  border-radius: 10px;
+  transition: border-color var(--transition-speed);
+}
+
+.img-thumbnail:hover {
+  border-color: var(--secondary-color);
+}
+
+/* Tables */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: rgba(59, 125, 221, 0.1);
+  border: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 1rem;
+}
+
+.table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Forms */
+.form-control {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border: 2px solid #eee;
+  transition: all var(--transition-speed);
+}
+
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(59, 125, 221, 0.1);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+  background-color: #2d62b3;
+  border-color: #2d62b3;
+  transform: translateY(-2px);
+}
+
+/* Alerts */
+.alert {
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+}
+
+/* Badges */
+.badge {
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Profile Section */
+.profile-header {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* News Cards */
+.news-card {
+  overflow: hidden;
+}
+
+.news-card img {
+  transition: transform var(--transition-speed);
+}
+
+.news-card:hover img {
+  transform: scale(1.05);
+}
+
+/* FAQ Accordion */
+.accordion-button {
+  padding: 1.25rem;
+  font-weight: 500;
+  background-color: white;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(59, 125, 221, 0.1);
+  color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #sidebar {
+    position: fixed;
+    left: -70px;
+    height: 100vh;
+  }
+
+  #sidebar.expand {
+    left: 0;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .profile-header {
+    text-align: center;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--secondary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform var(--transition-speed);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: #ffeeba;
+  color: #856404;
+}
+
+.status-approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

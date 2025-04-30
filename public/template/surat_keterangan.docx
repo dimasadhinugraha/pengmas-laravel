@@ -1,0 +1,24 @@
+SURAT KETERANGAN DOMISILI
+
+Nomor: ${nomor_surat}
+
+Yang bertanda tangan di bawah ini, Kepala Desa/Kelurahan, menerangkan bahwa:
+
+Nama                    : ${nama}
+NIK                     : ${nik}
+Tempat, Tanggal Lahir   : ${tempat_lahir}, ${tanggal_lahir}
+Jenis Kelamin          : ${jeniskelamin}
+Agama                  : ${agama}
+Alamat                 : ${alamat}
+Pekerjaan              : ${pekerjaan}
+
+Adalah benar warga yang berdomisili di alamat tersebut di atas.
+
+Demikian surat keterangan ini dibuat untuk dapat dipergunakan sebagaimana mestinya.
+
+${tanggal_surat}
+Kepala Desa/Kelurahan,
+
+
+(_______________________)
+NIP. 
